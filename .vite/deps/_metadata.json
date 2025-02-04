@@ -2,7 +2,66 @@
   "hash": "b4a2e8a1",
   "configHash": "29faeed5",
   "lockfileHash": "23cb00b7",
-  "browserHash": "1803b5dc",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "8ea6ee9f",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "2b3c11f9",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "9dea56e7",
+      "needsInterop": true
+    },
+    "react-router": {
+      "src": "../../node_modules/react-router/dist/development/index.mjs",
+      "file": "react-router.js",
+      "fileHash": "b8ade4c4",
+      "needsInterop": false
+    },
+    "@react-pdf-viewer/get-file": {
+      "src": "../../node_modules/@react-pdf-viewer/get-file/lib/index.js",
+      "file": "@react-pdf-viewer_get-file.js",
+      "fileHash": "ba69e572",
+      "needsInterop": true
+    },
+    "@react-pdf-viewer/core": {
+      "src": "../../node_modules/@react-pdf-viewer/core/lib/index.js",
+      "file": "@react-pdf-viewer_core.js",
+      "fileHash": "d2476c03",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "6f553d0b",
+      "needsInterop": true
+    },
+    "@mui/icons-material/LinkedIn": {
+      "src": "../../node_modules/@mui/icons-material/esm/LinkedIn.js",
+      "file": "@mui_icons-material_LinkedIn.js",
+      "fileHash": "46e4fd95",
+      "needsInterop": false
+    },
+    "@mui/icons-material/GitHub": {
+      "src": "../../node_modules/@mui/icons-material/esm/GitHub.js",
+      "file": "@mui_icons-material_GitHub.js",
+      "fileHash": "0780a25a",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-6EJP4TQN": {
+      "file": "chunk-6EJP4TQN.js"
+    },
+    "chunk-H5PCIC2D": {
+      "file": "chunk-H5PCIC2D.js"
+    },
+    "chunk-NS5MW37F": {
+      "file": "chunk-NS5MW37F.js"
+    }
+  }
 }
