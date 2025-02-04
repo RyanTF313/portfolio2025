@@ -23,10 +23,6 @@ function About() {
     padding: ".5rem",
   };
 
-  const tabStyle: React.CSSProperties = {
-    display: "flex",
-  };
-
   return (
     <div className="About">
       <div className="timeline" style={timelineStyle}>
