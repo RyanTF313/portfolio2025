@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
 import { Routes, Route } from "react-router";
-import Home from '../pages/Home';
-import About from '../pages/About';
-import Resume from '../pages/Resume';
-import Socials from '../pages/Socials';
-import Blog from '../pages/Blog';
-
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Resume from "../pages/Resume";
+import Socials from "../pages/Socials";
+import Blog from "../pages/Blog";
 
 function Content() {
   return (
@@ -18,7 +17,7 @@ function Content() {
         <Route path="blog" element={<Blog />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default Content
+export default Content;
