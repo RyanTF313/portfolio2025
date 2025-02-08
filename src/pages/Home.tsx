@@ -1,4 +1,5 @@
 import React from "react";
+import Contact from "../components/Contact";
 
 function Home() {
   return (
@@ -19,29 +20,36 @@ function Home() {
         </p>
       </div>
       <div className="foldersContainer" style={foldersContainerStyle}>
-        Projects:
+        <h3>Projects:</h3>
         <div className="folders" style={foldersStyle}>
           <div className="folder">
             <span className="material-symbols-outlined" style={folderStyle}>
               folder
             </span>
+            <span>Project 1</span>
           </div>
           <div className="folder">
             <span className="material-symbols-outlined" style={folderStyle}>
               folder
             </span>
+            <span>Project 2</span>
           </div>
           <div className="folder">
             <span className="material-symbols-outlined" style={folderStyle}>
               folder
             </span>
+            <span>Project 3</span>
           </div>
           <div className="folder">
             <span className="material-symbols-outlined" style={folderStyle}>
               folder
             </span>
+            <span>Project 4</span>
           </div>
         </div>
+      </div>
+      <div className="Contact">
+        <Contact />
       </div>
     </div>
   );
@@ -57,7 +65,7 @@ const introHeadingStyle: React.CSSProperties = {
 const introDescriptionStyle: React.CSSProperties = {
   borderTop: ".5rem solid #E3B505",
   borderBottom: ".5rem solid #E3B505",
-  fontSize: "1.5rem",
+  fontSize: "1.25rem",
   padding: "1rem",
   textAlign: "center",
 };
@@ -70,9 +78,11 @@ const foldersContainerStyle: React.CSSProperties = {
 };
 
 const foldersStyle: React.CSSProperties = {
+  borderBottom: ".5rem solid #E3B505",
   display: "flex",
   flexDirection: "row",
   textAlign: "center",
+  paddingBottom: ".5rem",
 };
 
 const folderStyle: React.CSSProperties = {
