@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, useLocation } from "react-router";
+import { HashRouter, useLocation } from "react-router";
 import "./index.css";
 import App from "./App.tsx";
 import { useEffect } from "react";
@@ -12,6 +12,7 @@ function RouteHandler() {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const path = params.get("p");
+    console.log({ path, params, location });
     if (path) {
       const fixedPath = path.startsWith("/") ? path : "/" + path;
       window.history.replaceState({}, "", fixedPath);
@@ -22,8 +23,8 @@ function RouteHandler() {
 }
 
 ReactDOM.createRoot(root!).render(
-  <BrowserRouter>
+  <HashRouter>
     <RouteHandler />
     <App />
-  </BrowserRouter>
+  </HashRouter>
 );
