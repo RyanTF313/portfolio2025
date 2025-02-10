@@ -6,6 +6,7 @@ function Home() {
     <div className="Home" style={homeStyle}>
       <div className="intro">
         <h4 style={introHeadingStyle}>Hello World</h4>
+        <h4 style={{textAlign:'center'}}>CURRENTLY WORKING ON THIS WEBSITE</h4>
         <p style={introDescriptionStyle}>
           My name is Ryan Hernandez-French and I am a software engineer based
           out of Detroit, MI. I have a wide range of experience after working
@@ -20,7 +21,7 @@ function Home() {
         </p>
       </div>
       <div className="foldersContainer" style={foldersContainerStyle}>
-        <h3>Projects:</h3>
+        <h3>Projects(Coming soon):</h3>
         <div className="folders" style={foldersStyle}>
           <div className="folder">
             <span className="material-symbols-outlined" style={folderStyle}>

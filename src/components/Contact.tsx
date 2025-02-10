@@ -1,57 +1,63 @@
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 export default function Contact() {
   const [result, setResult] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const formStyle: React.CSSProperties = {
+    backgroundColor: "#E3B505",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-evenly",
     alignItems: "center",
   };
-
   const nameStyle: React.CSSProperties = {
-    border: '.25rem solid #01baef',
-    borderRadius: '.25rem',
-    color: '#2a2c24',
+    border: ".25rem solid #01baef",
+    borderRadius: ".25rem",
+    color: "#01baef",
     display: "flex",
     flexDirection: "row",
     fontSize: "1.5rem",
     marginBottom: ".5rem",
-    padding: '.25rem',
+    padding: ".25rem",
     width: "50rem",
   };
   const emailStyle: React.CSSProperties = {
-    border: '.25rem solid #01baef',
-    borderRadius: '.25rem',
-    color: '#2a2c24',
+    border: ".25rem solid #01baef",
+    borderRadius: ".25rem",
+    color: "#01baef",
     display: "flex",
     flexDirection: "row",
     fontSize: "1.5rem",
     marginBottom: ".5rem",
-    padding: '.25rem',
+    padding: ".25rem",
     width: "50rem",
   };
   const messageStyle: React.CSSProperties = {
-    border: '.25rem solid #01baef',
-    borderRadius: '.25rem',
-    color: '#2a2c24',
+    border: ".25rem solid #01baef",
+    borderRadius: ".25rem",
+    color: "#01baef",
     display: "flex",
     flexDirection: "row",
     fontSize: "1.5rem",
     marginBottom: ".5rem",
-    padding: '.25rem',
+    padding: ".25rem",
     width: "50rem",
   };
   const submitStyle: React.CSSProperties = {
-    border: '.25rem solid #01baef',
-    borderRadius: '.25rem',
-    color: '#2a2c24',
+    backgroundColor: "#2a2c24",
+    border: ".25rem solid #01baef",
+    borderRadius: ".25rem",
+    color: "#01baef",
     display: "flex",
     flexDirection: "row",
     fontSize: "1.5rem",
     marginBottom: ".5rem",
-    padding: '.25rem',
+    padding: ".25rem",
     width: "50rem",
   };
   const resultsStyle: React.CSSProperties = {
@@ -78,13 +84,34 @@ export default function Contact() {
 
     if (data.success) {
       setResult("Form Submitted Successfully");
-      event.currentTarget.reset();
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+      setTimeout(() => setResult(""), 2000);
     } else {
       console.log("Error", data);
       setResult(data.message);
+      setTimeout(() => setResult(""), 2000);
     }
   };
 
+  const onChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    event.preventDefault();
+    const field = event.currentTarget.getAttribute("name") ?? "";
+    const value = event.currentTarget.value;
+
+    setFormData({ ...formData, [field]: value });
+  };
+
+  const { name, email, message } = formData;
+
+  if (result) {
+    return <span style={resultsStyle}>{result}</span>;
+  }
   return (
     <div>
       <div className="contactHeader">
@@ -106,6 +133,8 @@ export default function Contact() {
             required
             placeholder="Name"
             style={nameStyle}
+            onChange={onChange}
+            value={name}
           />
           <input
             type="email"
@@ -113,12 +142,16 @@ export default function Contact() {
             required
             placeholder="Email"
             style={emailStyle}
+            onChange={onChange}
+            value={email}
           />
           <textarea
             name="message"
             required
             placeholder="Message..."
             style={messageStyle}
+            onChange={onChange}
+            value={message}
           ></textarea>
 
           <button type="submit" style={submitStyle}>
@@ -126,7 +159,11 @@ export default function Contact() {
           </button>
         </form>
       </div>
-      <span style={resultsStyle}>{result}</span>
+      <style>
+        {`::placeholder {
+  color: "#01baef",
+}`}
+      </style>
     </div>
   );
 }

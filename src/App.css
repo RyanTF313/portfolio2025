@@ -43,6 +43,10 @@ li.active {
   color: #01baef;
 }
 
+input::placeholder {
+  color: "#01baef",
+}
+
 /* Google Icons */
 
 .material-icons {
